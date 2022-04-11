@@ -11,7 +11,7 @@ import { ProductTracklistingComponent } from './product-tracklisting/product-tra
 import { ProductListComponent } from './product-list/product-list.component';
 import { Routes, Router, RouterModule } from '@angular/router';
 
-const routes: Routes = [
+const appRoutes: Routes = [
   { path: 'products', component:ProductListComponent},
   { path: 'product/:id', component: ProductPageComponent },
   { path: '', redirectTo: 'products', pathMatch: 'full' }
@@ -37,7 +37,5 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-function appRoutes(appRoutes: any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders {
-  throw new Error('Function not implemented.');
-}
+
 
