@@ -9,7 +9,13 @@ import { ProductDescriptionComponent } from './product-description/product-descr
 import { ProductService } from './product.service';
 import { ProductTracklistingComponent } from './product-tracklisting/product-tracklisting.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { Routes, Router, RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  { path: 'products', component:ProductListComponent},
+  { path: 'product/:id', component: ProductPageComponent },
+  { path: '', redirectTo: 'products', pathMatch: 'full' }
+]
 
 @NgModule({
   declarations: [
@@ -22,7 +28,8 @@ import { ProductListComponent } from './product-list/product-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     ProductService
@@ -30,3 +37,7 @@ import { ProductListComponent } from './product-list/product-list.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function appRoutes(appRoutes: any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders {
+  throw new Error('Function not implemented.');
+}
+
